@@ -10,9 +10,9 @@ class MyButton extends StatelessWidget {
 
 //Constructor
   const MyButton({
-    required this.color,
     super.key,
     this.buttonTapped,
+    required this.color,
     required this.textColor,
     required this.buttonText,
   });
@@ -21,21 +21,18 @@ class MyButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: buttonTapped,
-      child: Padding(
-        padding: const EdgeInsets.all(0.2),
-        child: ClipRRect(
-          // borderRadius: BorderRadius.circular(25),
-          child: Container(
-            color: color,
-            child: Center(
-              child: Text(
-                buttonText,
-                style: TextStyle(
-                  color: textColor,
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(4),
+          color: color,
+        ),
+        child: Center(
+          child: Text(
+            buttonText,
+            style: TextStyle(
+              color: textColor,
+              fontSize: 25,
+              fontWeight: FontWeight.bold,
             ),
           ),
         ),
